@@ -1,0 +1,15 @@
+{
+  "name": "openresty-practise",
+  "version": "0.0.1",
+  "description": "openresty practise",
+  "main": "index.js",
+  "scripts": {
+    "test": "/usr/local/openresty/nginx/sbin/nginx -t -p $(pwd)/nginx/ -c nginx.conf",
+    "start": "/usr/local/openresty/nginx/sbin/nginx -p $(pwd)/nginx/ -c nginx.conf",
+    "stop": "PID_FILE=nginx/tmp/nginx.pid && [ -f $PID_FILE ] && kill $(cat $PID_FILE)",
+    "reload": "PID_FILE=nginx/tmp/nginx.pid && [ -f $PID_FILE ] && kill -HUP $(cat $PID_FILE)",
+    "status": "PID_FILE=nginx/tmp/nginx.pid && [ -f $PID_FILE ] && ps -p $(cat nginx/tmp/nginx.pid) || echo 'nginx is stop'"
+  },
+  "author": "Sean Dou",
+  "license": "MIT"
+}
